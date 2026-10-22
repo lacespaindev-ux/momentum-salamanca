@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restaurante Momentum · Salamanca</title>
+<meta name="description" content="Restaurante Momentum, en la Plaza del Peso junto a la Plaza Mayor de Salamanca: tostas, hamburguesas, menú del día y tiramisú casero.">
+<meta property="og:title" content="Restaurante Momentum"><meta property="og:description" content="Restaurante Momentum, en la Plaza del Peso junto a la Plaza Mayor de Salamanca: tostas, hamburguesas, menú del día y tiramisú casero."><meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R9__Iq6K4omAFhglKzkhV1KEhZ2mEFGGhPP6bvFXRlChM1cmsXQXk9eweQhldNq6dYWM6RMrWHJ_UpJCANVBTOGRuTPr841jIS655jzqRy_DchN2mgmQwbwgf43DP4vBxNRj2bnwza9wfA=w1200-h630-k-no">
+<meta name="theme-color" content="#f5b700">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#fffdf6;--fg:#1d1d1b;--muted:#5f5b52;--accent:#f5b700;--on-accent:#1d1d1b;--card:#fff;--line:#ece6d6;--fh:'Syne',sans-serif;--fb:'Manrope',sans-serif;--hw:800}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--fb);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+main{overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:var(--fh);line-height:1.08;font-weight:var(--hw,700)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:88px 0;position:relative}
+.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px;display:block}
+.sec-title{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:14px}
+.sec-sub{color:var(--muted);max-width:620px;margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:var(--radius,999px);font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:var(--fb);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--accent);color:var(--on-accent,#fff);box-shadow:0 10px 30px -10px var(--accent)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn svg{width:20px;height:20px;flex:none}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg,rgba(255,255,255,.85));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{font-family:var(--fh);font-size:1.35rem;text-decoration:none;font-weight:var(--hw,700);white-space:nowrap}
+.links{display:flex;gap:26px;list-style:none;align-items:center}
+.links a{text-decoration:none;font-weight:600;font-size:.95rem;opacity:.85}
+.links a:hover{opacity:1;color:var(--accent)}
+.links .cta{background:var(--accent);color:var(--on-accent,#fff);padding:9px 18px;border-radius:999px;opacity:1}
+.links .cta:hover{color:var(--on-accent,#fff)}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--fg);cursor:pointer;align-items:center;justify-content:center;gap:5px;flex-direction:column}
+.burger span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;transition:.25s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:860px){
+ .burger{display:flex}
+ .links{position:absolute;top:66px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;background:var(--menu-bg,var(--bg));border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 24px 50px -20px rgba(0,0,0,.45);transform-origin:top;transform:scaleY(.9);opacity:0;pointer-events:none;transition:.22s}
+ .links.open{opacity:1;transform:none;pointer-events:auto}
+ .links a{display:block;padding:14px 16px;border-radius:12px;font-size:1.05rem}
+ .links a:hover{background:var(--line)}
+ .links .cta{text-align:center;margin-top:6px}
+}
+/* DISHES */
+.dishes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.dish{background:var(--card);border-radius:var(--rcard,20px);overflow:hidden;border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.dish:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(0,0,0,.45)}
+.dish .ph{aspect-ratio:4/3;overflow:hidden}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.dish:hover img{transform:scale(1.07)}
+.dish .tx{padding:16px 18px 20px}
+.dish h3{font-size:1.25rem;margin-bottom:4px}
+.dish p{color:var(--muted);font-size:.95rem}
+.dish .tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--on-accent,#fff);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+/* GALLERY */
+.gal{columns:3 260px;column-gap:14px}
+.gal button{display:block;width:100%;margin:0 0 14px;border:0;padding:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--card);break-inside:avoid}
+.gal img{width:100%;transition:transform .5s,filter .3s}
+.gal button:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:86vh;max-width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .x,.lb .pv,.lb .nx{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer}
+.lb .x{top:18px;right:18px}.lb .pv{left:14px;top:50%;transform:translateY(-50%)}.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+/* REVIEWS */
+.rv-head{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 26px;margin-bottom:22px}
+.rv-score{display:flex;align-items:center;gap:14px}
+.rv-score b{font-size:3rem;font-family:var(--fh);line-height:1}
+.g-logo{width:34px;height:34px;flex:none}
+.stars{display:inline-flex;gap:2px;color:#fbbc04}
+.stars svg{width:18px;height:18px}
+.rv-meta{font-size:.92rem;color:var(--muted)}
+.rv-bars{flex:1;min-width:200px;display:grid;gap:4px}
+.rv-bar{display:grid;grid-template-columns:14px 1fr;gap:8px;align-items:center;font-size:.78rem;color:var(--muted)}
+.rv-bar i{height:7px;border-radius:9px;background:var(--line);position:relative;overflow:hidden}
+.rv-bar i:after{content:"";position:absolute;inset:0;width:var(--w);background:#fbbc04;border-radius:9px;transform-origin:left;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.rv-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;font-family:var(--fb);transition:.2s}
+.chip.on{background:var(--accent);color:var(--on-accent,#fff);border-color:var(--accent)}
+.rv-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:none;cursor:grab}
+.rv-track::-webkit-scrollbar{display:none}
+.rv{flex:0 0 min(360px,86%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,opacity .3s}
+.rv.hide{display:none}
+.rv-top{display:flex;align-items:center;gap:12px}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.1rem;flex:none}
+.rv-top strong{display:block;font-size:.98rem;line-height:1.2}
+.rv-top small{color:var(--muted);font-size:.8rem}
+.rv-top .g-logo{width:22px;height:22px;margin-left:auto}
+.rv p{font-size:.97rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.rv.open p{-webkit-line-clamp:unset}
+.rv .more{align-self:flex-start;background:none;border:0;color:var(--accent);font-weight:800;cursor:pointer;font-family:var(--fb);font-size:.9rem;padding:0}
+.rv-nav{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.rv-arrows{display:flex;gap:10px}
+.rv-arrows button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:1.3rem;cursor:pointer}
+.rv-arrows button:hover{background:var(--accent);color:var(--on-accent,#fff)}
+.rv-dots{display:flex;gap:6px}
+.rv-dots i{width:8px;height:8px;border-radius:9px;background:var(--line);transition:.3s}
+.rv-dots i.on{width:26px;background:var(--accent)}
+/* INFO */
+.info{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:800;padding:7px 14px;border-radius:999px;font-size:.9rem;margin-bottom:16px}
+.status i{width:9px;height:9px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:pulse 1.8s infinite}
+.status.open{background:rgba(34,197,94,.15);color:#16a34a}
+.status.closed{background:rgba(239,68,68,.13);color:#dc2626}
+@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:9px 0;border-bottom:1px dashed var(--line);font-size:.97rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{font-weight:800;color:var(--fg)}
+.hours tr.today td:last-child{color:var(--accent)}
+.contact-list{list-style:none;display:grid;gap:14px;margin:18px 0 22px}
+.contact-list li{display:flex;gap:12px;align-items:flex-start}
+.contact-list svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:2px}
+.map{border-radius:22px;overflow:hidden;min-height:360px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+@media(max-width:860px){.info{grid-template-columns:1fr}section{padding:64px 0}}
+/* CTA + FOOTER */
+.cta-band{text-align:center}
+.cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+footer{padding:34px 0 100px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--accent);font-weight:700;text-decoration:none}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);animation:bob 3s ease-in-out infinite}
+.wa-float svg{width:32px;height:32px;color:#fff}
+@keyframes bob{50%{transform:translateY(-5px)}}
+/* REVEAL */
+.rv-in{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv-in.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv-in{opacity:1;transform:none}}
+
+.intro{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.intro-tx p{color:var(--muted);margin-bottom:14px;font-size:1.06rem}
+.hl{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hl li{background:var(--card);border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-weight:700;font-size:.92rem}
+.intro-ims{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.intro-ims img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--rcard,20px)}
+.intro-ims img:nth-child(2){margin-top:48px}
+@media(max-width:860px){.intro{grid-template-columns:1fr;gap:32px}}
+
+.hero-mo{padding:56px 0 80px;background:linear-gradient(180deg,#fff 0,#fff8e1 100%)}
+.mo-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero-mo h1{font-size:clamp(3rem,8vw,5.6rem);letter-spacing:-.03em;margin:8px 0 18px}
+.rot{display:inline-block;background:var(--accent);color:#1d1d1b;padding:0 14px;border-radius:14px;transition:.3s}
+.rot.out{opacity:0;transform:translateY(12px)}
+.lead{font-size:1.15rem;max-width:520px;margin-bottom:26px;color:var(--muted)}
+.hs-btns{display:flex;gap:12px;flex-wrap:wrap}
+.mo-stats{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
+.mo-stats b{display:block;font-family:var(--fh);font-size:1.8rem}.mo-stats span{color:var(--muted);font-size:.88rem}
+.mo-ph{position:relative}
+.mo-ph>img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 28px 28px;box-shadow:0 40px 70px -40px rgba(0,0,0,.6)}
+.mo-tag{position:absolute;left:-24px;bottom:40px;background:#fff;border-radius:18px;padding:10px 16px 10px 10px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.4);animation:bob 4s ease-in-out infinite}
+.mo-tag img{width:56px;height:56px;border-radius:12px;object-fit:cover}
+@media(max-width:860px){.mo-grid{grid-template-columns:1fr}.mo-tag{left:10px}}
+.sec-extra{background:#1d1d1b;color:#fff}.sec-extra .sec-sub{color:#bdb8ad}
+.walk{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.walk-map{width:100%;height:auto;border-radius:24px;box-shadow:0 30px 60px -30px #000}
+.walk-t{grid-column:2;text-align:center;font-family:var(--fh);font-size:1.5rem;color:var(--accent);margin-top:-20px}
+@media(max-width:860px){.walk{grid-template-columns:1fr}.walk-t{grid-column:1}}
+</style></head>
+<body class="momentum-salamanca">
+<header class="nav"><div class="wrap"><a class="brand" href="#top">Momentum<span style="color:var(--accent)">.</span></a>
+<button class="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="links"><li><a href="#casa">La casa</a></li><li><a href="#carta">Carta</a></li><li><a href="#extra">Cómo llegar</a></li><li><a href="#fotos">Fotos</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#info">Horario</a></li><li><a class="cta" href="https://wa.me/34604879792" target="_blank" rel="noopener">WhatsApp</a></li></ul></div></header>
+<main id="top">
+<section class="hero-mo"><div class="wrap mo-grid">
+<div class="rv-in"><span class="kicker">Plaza del Peso · junto a la Plaza Mayor</span>
+<h1>Tu momento<br>de <span class="rot" id="rot">tapeo</span></h1>
+<p class="lead">Tostas, hamburguesas, menú del día y tiramisú casero a dos pasos de la Plaza Mayor. Con terraza y fútbol en la tele.</p>
+<div class="hs-btns"><a class="btn btn-main" href="#extra">🚶 Cómo llegar a pie</a><a class="btn btn-ghost" href="#carta">Ver la carta</a></div>
+<div class="mo-stats"><div><b>4,6★</b><span>en Google</span></div><div><b>2 min</b><span>de la Plaza Mayor</span></div><div><b>Menú</b><span>del día</span></div></div></div>
+<div class="mo-ph rv-in"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R9__Iq6K4omAFhglKzkhV1KEhZ2mEFGGhPP6bvFXRlChM1cmsXQXk9eweQhldNq6dYWM6RMrWHJ_UpJCANVBTOGRuTPr841jIS655jzqRy_DchN2mgmQwbwgf43DP4vBxNRj2bnwza9wfA=w900-h1100-k-no" alt="Tostas de Momentum"><div class="mo-tag"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzoW_u1FIgSWN7O3LSLdT6m9ZwXsoNd5HttqF_laEqekel_WuJVyCYoYzwlZhV1p4zkeqvzNC6i3ijgxGGFFt3KDag3kj2RIRx21L1o7eToKe_KaraRECsQ9yNMKDTPon3obv1UeJwHLSb=w200-h200-k-no" alt=""><span><b>Tiramisú</b><br>de café o de limón</span></div></div></div></section>
+<section id="casa"><div class="wrap"><div class="intro "><div class="intro-tx rv-in"><span class="kicker">Momentum</span><h2 class="sec-title">Céntrico, bonito<br>y con buen precio</h2><p>Momentum está en la Plaza del Peso, en pleno centro de Salamanca. Un local luminoso, con decoración original y una terraza perfecta para parar entre visita y visita.</p><p>Carta completa para tapear o comer, menú del día muy acertado, y postres caseros: nuestros dos tiramisús (de café y de limón) ya tienen fans en Google.</p><ul class="hl"><li>📍 Junto a la Plaza Mayor</li><li>🍽️ Menú del día</li><li>⚽ Fútbol</li><li>☀️ Terraza</li></ul></div><div class="intro-ims rv-in"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QAnoTFjAMu09lxhO5KH0w5NXzLRxMKdiE42L3wG8SQvG68TVdKkHB75zwRGchUjstiQ92gq_K9zYs88EotbcaT97C4CmYvCtWiwMbmD9mbmxHDPubxYaOg4NVkzvnDqmpgrP7i9-fvImY=w800-h1000-k-no" alt=""><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TBl4RGOPlfGR4PC5flDLwXRMTYk4l1PvfHFJmnl4gxHKB20GjCtzafwgCDegNWzBKhcDXd1vH1eB-oLiTwB3fGfR8M4c9BAGdytDhLxJrS6k-eTJIbqLfJaP8iOnMHWYTCZ0V8NVJD7OQ=w800-h1000-k-no" alt=""></div></div></div></section>
+<section id="carta" class="sec-carta"><div class="wrap"><span class="kicker">Lo que más piden</span><h2 class="sec-title">De la cocina a tu mesa</h2><p class="sec-sub">Una selección de lo que sale de nuestra cocina. Pregúntanos por la carta completa y las sugerencias del día.</p><div class="dishes"><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R9__Iq6K4omAFhglKzkhV1KEhZ2mEFGGhPP6bvFXRlChM1cmsXQXk9eweQhldNq6dYWM6RMrWHJ_UpJCANVBTOGRuTPr841jIS655jzqRy_DchN2mgmQwbwgf43DP4vBxNRj2bnwza9wfA=w700-h525-k-no" alt="Tostas variadas"></div><div class="tx"><span class=tag>Para picar</span><h3>Tostas variadas</h3><p>Sobre pan crujiente: perfectas para compartir.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TBl4RGOPlfGR4PC5flDLwXRMTYk4l1PvfHFJmnl4gxHKB20GjCtzafwgCDegNWzBKhcDXd1vH1eB-oLiTwB3fGfR8M4c9BAGdytDhLxJrS6k-eTJIbqLfJaP8iOnMHWYTCZ0V8NVJD7OQ=w700-h525-k-no" alt="Hamburguesa Momentum"></div><div class="tx"><span class=tag>Top reseñas</span><h3>Hamburguesa Momentum</h3><p>«Espectacular a buen precio», según quien la ha probado.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQQ7uU01THnl13ewRPbzMDTT4wFkhc7c74q3f1SpkY94T_RkpMj1L9B9Fsa4wXf4Ei46sFcrd1qG-Gx2a3B4nBIF8BAsyi6u5jD3cF3OxWfSNeh0lyk99kUlP_jKDRIWGMixA5qzK5UQ4=w700-h525-k-no" alt="Tabla de ibéricos"></div><div class="tx"><h3>Tabla de ibéricos</h3><p>Lo mejor de Salamanca, cortado al momento.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SG59bRraFrxvmNklSt-PKOUGsS3N6UTnozgg5DH-p-0ijEZFRDX21_Cqg4vIr-f89Xs91l3INI-kyznKGJmvlyC5pAML4_FXKdVJ3rdpoG9Z2RHaxvMtZtvgesuPcy81gEHDnFgIY5QVo=w700-h525-k-no" alt="Ensalada de tomate"></div><div class="tx"><h3>Ensalada de tomate</h3><p>Fresca, con su reducción.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qewn_w0pEP798KojJ-Inlo87L9HvBgsEMeId_dw9LUCTSn64hzw6ih2S43N-du31oLicK1JOy9bdC083mBU1oc9lN2mvxAduMrStk25YwzuuLXb8kXk6-7N_hC2WvDkJpJQK8KFcQQcdZD=w700-h525-k-no" alt="Bocadillos"></div><div class="tx"><h3>Bocadillos</h3><p>Para comer bien sin complicarse.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tlfo6JG_ywvUXH5DKizrNhHJjr-ufRHqTaR4loVCaiTzI6M5rn-ZUnn9zOiQt7yHo1AjySMMqTW3iLqKnF6fSY__YQm3g_ReuXUMoJUQUhnteam19zQIW1T6RHwhQ-IwJBB5rESipT8Bc=w700-h525-k-no" alt="Plato del menú"></div><div class="tx"><span class=tag>Menú</span><h3>Plato del menú</h3><p>Cocina casera en el menú del día.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzoW_u1FIgSWN7O3LSLdT6m9ZwXsoNd5HttqF_laEqekel_WuJVyCYoYzwlZhV1p4zkeqvzNC6i3ijgxGGFFt3KDag3kj2RIRx21L1o7eToKe_KaraRECsQ9yNMKDTPon3obv1UeJwHLSb=w700-h525-k-no" alt="Tiramisú de café y de limón"></div><div class="tx"><span class=tag>Casero</span><h3>Tiramisú de café y de limón</h3><p>Elige bando… o pide los dos.</p></div></article><article class="dish rv-in"><div class="ph"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RvZdNnq_DudTjRETfGC8OQhgzVId_7TqtEXRgAzw1jP_JUgsN_IdMoXOWLDj3IRUspgld8Oz2Mh0kv7isJHkyk65OTcM4z4cjDA3cw_Xz1bIpXTIHvP9aQivehnUnoJkAPeMM2ZAGsgnM=w700-h525-k-no" alt="Tarta de la casa"></div><div class="tx"><span class=tag>Dulce</span><h3>Tarta de la casa</h3><p>Para terminar con buen sabor de boca.</p></div></article></div></div></section>
+<section id="extra" class="sec-extra"><div class="wrap"><div class="walk rv-in"><div><span class="kicker">Estás más cerca de lo que crees</span><h2 class="sec-title">De la Plaza Mayor a tu mesa en 2 minutos</h2>
+<p class="sec-sub">Sal de la Plaza Mayor por el lado sur y en un par de minutos estás en la Plaza del Peso. Dale al botón y míralo.</p>
+<button class="btn btn-main" id="walkGo">🚶 Hacer el paseo</button></div>
+<svg class="walk-map" viewBox="0 0 400 300" aria-label="Ruta a pie desde la Plaza Mayor">
+<rect x="0" y="0" width="400" height="300" rx="24" fill="#f3f1ea"/>
+<g fill="#e4e0d4"><rect x="20" y="20" width="90" height="60" rx="8"/><rect x="250" y="20" width="130" height="50" rx="8"/><rect x="20" y="200" width="120" height="80" rx="8"/><rect x="280" y="200" width="100" height="80" rx="8"/><rect x="170" y="230" width="80" height="50" rx="8"/></g>
+<rect x="120" y="40" width="120" height="110" rx="6" fill="#e9c46a" opacity=".55"/><text x="180" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#5c4400">Plaza Mayor</text>
+<path id="route" d="M200 150 L200 175 Q205 190 225 192 L262 194" fill="none" stroke="#1d1d1b" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 8" opacity=".25"/>
+<path id="routeOn" d="M200 150 L200 175 Q205 190 225 192 L262 194" fill="none" stroke="#f5b700" stroke-width="7" stroke-linecap="round"/>
+<circle cx="268" cy="194" r="16" fill="#1d1d1b"/><text x="268" y="199" text-anchor="middle" font-size="15">🍽️</text>
+<text x="300" y="186" font-size="12" font-weight="700" fill="#1d1d1b">Momentum</text><text x="300" y="201" font-size="11" fill="#666">Pl. del Peso</text>
+<text id="walker" font-size="22" x="190" y="160">🚶</text></svg>
+<p class="walk-t" id="walkT">⏱️ 0 min</p></div></div></section>
+<section id="fotos"><div class="wrap"><span class="kicker">Galería</span><h2 class="sec-title">Así se vive aquí</h2><p class="sec-sub">Toca cualquier foto para verla en grande.</p><div class="gal"><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QAnoTFjAMu09lxhO5KH0w5NXzLRxMKdiE42L3wG8SQvG68TVdKkHB75zwRGchUjstiQ92gq_K9zYs88EotbcaT97C4CmYvCtWiwMbmD9mbmxHDPubxYaOg4NVkzvnDqmpgrP7i9-fvImY=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QAnoTFjAMu09lxhO5KH0w5NXzLRxMKdiE42L3wG8SQvG68TVdKkHB75zwRGchUjstiQ92gq_K9zYs88EotbcaT97C4CmYvCtWiwMbmD9mbmxHDPubxYaOg4NVkzvnDqmpgrP7i9-fvImY=w700-h900-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R9__Iq6K4omAFhglKzkhV1KEhZ2mEFGGhPP6bvFXRlChM1cmsXQXk9eweQhldNq6dYWM6RMrWHJ_UpJCANVBTOGRuTPr841jIS655jzqRy_DchN2mgmQwbwgf43DP4vBxNRj2bnwza9wfA=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R9__Iq6K4omAFhglKzkhV1KEhZ2mEFGGhPP6bvFXRlChM1cmsXQXk9eweQhldNq6dYWM6RMrWHJ_UpJCANVBTOGRuTPr841jIS655jzqRy_DchN2mgmQwbwgf43DP4vBxNRj2bnwza9wfA=w700-h700-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TBl4RGOPlfGR4PC5flDLwXRMTYk4l1PvfHFJmnl4gxHKB20GjCtzafwgCDegNWzBKhcDXd1vH1eB-oLiTwB3fGfR8M4c9BAGdytDhLxJrS6k-eTJIbqLfJaP8iOnMHWYTCZ0V8NVJD7OQ=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TBl4RGOPlfGR4PC5flDLwXRMTYk4l1PvfHFJmnl4gxHKB20GjCtzafwgCDegNWzBKhcDXd1vH1eB-oLiTwB3fGfR8M4c9BAGdytDhLxJrS6k-eTJIbqLfJaP8iOnMHWYTCZ0V8NVJD7OQ=w700-h700-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TcHVctYfDBLu0ynS8tyEShIOWVnVRkpYgVAKpaIkmXI7gkgAeoQ6KbhSv1WvROFrqAUJbOWat0Vn1Y9546vhnUX27wjpjh-XPOqOQ72TNsxLIx6-OEBeLdnaYtUL7nyuFfBTWcghPURm9X=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TcHVctYfDBLu0ynS8tyEShIOWVnVRkpYgVAKpaIkmXI7gkgAeoQ6KbhSv1WvROFrqAUJbOWat0Vn1Y9546vhnUX27wjpjh-XPOqOQ72TNsxLIx6-OEBeLdnaYtUL7nyuFfBTWcghPURm9X=w700-h900-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQQ7uU01THnl13ewRPbzMDTT4wFkhc7c74q3f1SpkY94T_RkpMj1L9B9Fsa4wXf4Ei46sFcrd1qG-Gx2a3B4nBIF8BAsyi6u5jD3cF3OxWfSNeh0lyk99kUlP_jKDRIWGMixA5qzK5UQ4=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQQ7uU01THnl13ewRPbzMDTT4wFkhc7c74q3f1SpkY94T_RkpMj1L9B9Fsa4wXf4Ei46sFcrd1qG-Gx2a3B4nBIF8BAsyi6u5jD3cF3OxWfSNeh0lyk99kUlP_jKDRIWGMixA5qzK5UQ4=w700-h700-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SG59bRraFrxvmNklSt-PKOUGsS3N6UTnozgg5DH-p-0ijEZFRDX21_Cqg4vIr-f89Xs91l3INI-kyznKGJmvlyC5pAML4_FXKdVJ3rdpoG9Z2RHaxvMtZtvgesuPcy81gEHDnFgIY5QVo=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SG59bRraFrxvmNklSt-PKOUGsS3N6UTnozgg5DH-p-0ijEZFRDX21_Cqg4vIr-f89Xs91l3INI-kyznKGJmvlyC5pAML4_FXKdVJ3rdpoG9Z2RHaxvMtZtvgesuPcy81gEHDnFgIY5QVo=w700-h700-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T05pjwD4jgX9OYPiGa1T1fEVDJiV6entZfve2X42q4rJw1h6NJo5VHLniUR6ML1SiswDl5KXpsuJrheHIKrISL3mefORTSRwt-YWfmsl8dHmnUaJqGd0Y2xIU4EtK5ETR8qjkih6rp8z0=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T05pjwD4jgX9OYPiGa1T1fEVDJiV6entZfve2X42q4rJw1h6NJo5VHLniUR6ML1SiswDl5KXpsuJrheHIKrISL3mefORTSRwt-YWfmsl8dHmnUaJqGd0Y2xIU4EtK5ETR8qjkih6rp8z0=w700-h900-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzoW_u1FIgSWN7O3LSLdT6m9ZwXsoNd5HttqF_laEqekel_WuJVyCYoYzwlZhV1p4zkeqvzNC6i3ijgxGGFFt3KDag3kj2RIRx21L1o7eToKe_KaraRECsQ9yNMKDTPon3obv1UeJwHLSb=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RzoW_u1FIgSWN7O3LSLdT6m9ZwXsoNd5HttqF_laEqekel_WuJVyCYoYzwlZhV1p4zkeqvzNC6i3ijgxGGFFt3KDag3kj2RIRx21L1o7eToKe_KaraRECsQ9yNMKDTPon3obv1UeJwHLSb=w700-h700-k-no" alt=""></button><button type="button" class="rv-in" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qewn_w0pEP798KojJ-Inlo87L9HvBgsEMeId_dw9LUCTSn64hzw6ih2S43N-du31oLicK1JOy9bdC083mBU1oc9lN2mvxAduMrStk25YwzuuLXb8kXk6-7N_hC2WvDkJpJQK8KFcQQcdZD=w1600-h1200-k-no" aria-label="Ampliar foto"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qewn_w0pEP798KojJ-Inlo87L9HvBgsEMeId_dw9LUCTSn64hzw6ih2S43N-du31oLicK1JOy9bdC083mBU1oc9lN2mvxAduMrStk25YwzuuLXb8kXk6-7N_hC2WvDkJpJQK8KFcQQcdZD=w700-h700-k-no" alt=""></button></div></div></section>
+<section id="resenas" class="sec-rev"><div class="wrap"><span class="kicker">Reseñas reales de Google</span><h2 class="sec-title">Lo que dicen de nosotros</h2>
+<div class="rv-head rv-in"><div class="rv-score"><svg class="g-logo" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg><b>4,6</b><div><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg></span><div class="rv-meta">84 reseñas en Google</div></div></div>
+<div class="rv-bars"><div class="rv-bar"><span>5</span><i style="--w:78%"></i></div><div class="rv-bar"><span>4</span><i style="--w:12%"></i></div><div class="rv-bar"><span>3</span><i style="--w:4%"></i></div><div class="rv-bar"><span>2</span><i style="--w:2%"></i></div><div class="rv-bar"><span>1</span><i style="--w:4%"></i></div></div>
+<a class="btn btn-ghost" href="https://www.google.com/maps/place/?q=place_id:ChIJSwmj_V4nPw0RCnAJUwsT8r0" target="_blank" rel="noopener">Ver en Google</a></div>
+<div class="rv-chips"><button class="chip on" data-f="">Todas</button><button class="chip" data-f="5">5 estrellas</button><button class="chip" data-f="menú|hamburguesa|tiramisú|tapeo|comida">Comida</button><button class="chip" data-f="terraza">Terraza</button><button class="chip" data-f="camarero|atención|servicio|amabilidad">Trato</button></div>
+<div class="rv-track" id="rvTrack"></div>
+<div class="rv-nav"><div class="rv-dots" id="rvDots"></div><div class="rv-arrows"><button id="rvPrev" aria-label="Anterior">&#8592;</button><button id="rvNext" aria-label="Siguiente">&#8594;</button></div></div>
+</div></section>
+<section id="info"><div class="wrap"><span class="kicker">Ven a vernos</span><h2 class="sec-title">Horario y cómo llegar</h2>
+<div class="info"><div class="box rv-in"><span id="status" class="status"><i></i>Horario</span><table class="hours"><tr><td>Lunes</td><td>Cerrado</td></tr><tr><td>Martes</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr><tr><td>Miércoles</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr><tr><td>Jueves</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr><tr><td>Viernes</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr><tr><td>Sábado</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr><tr><td>Domingo</td><td>12:00 – 17:00 · 19:00 – 00:00</td></tr></table>
+<ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Plaza del Peso · 37001 Salamanca</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34604879792">604 87 97 92</a></li></ul>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-main" href="https://wa.me/34604879792" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4z"/></svg>WhatsApp</a><a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=40.963705,-5.6636245" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cómo llegar</a></div></div>
+<div class="map rv-in"><iframe loading="lazy" title="Mapa" src="https://maps.google.com/maps?q=40.963705,-5.6636245&z=16&hl=es&output=embed"></iframe></div></div></div></section>
+<section class="cta-band"><div class="wrap rv-in"><h2 class="sec-title">¿Te guardamos mesa en la terraza?</h2><p class="sec-sub" style="margin:0 auto">Escríbenos y te la dejamos lista.</p>
+<div class="btns"><a class="btn btn-main" href="https://wa.me/34604879792?text=Hola!%20Quer%C3%ADa%20reservar%20mesa%20en%20Momentum" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4z"/></svg>Escríbenos por WhatsApp</a><a class="btn btn-ghost" href="tel:+34604879792"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Llamar</a></div></div></section>
+</main>
+<footer><div class="wrap"><span>© Restaurante Momentum · Salamanca</span><span>Web hecha por <a href="https://lacedev.com" target="_blank" rel="noopener">Lace</a></span></div></footer>
+<a class="wa-float" href="https://wa.me/34604879792" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4z"/></svg></a>
+<div class="lb" role="dialog" aria-label="Foto ampliada"><button class="x" aria-label="Cerrar">&times;</button><button class="pv" aria-label="Anterior">&#8249;</button><img alt=""><button class="nx" aria-label="Siguiente">&#8250;</button></div>
+<script>window.REVIEWS=[{"n": "Javier Contra Vecino", "s": 5, "d": "Hace 3 meses", "t": "Carta completa, comida variada y servicio excepcional. Si buscas un sitio céntrico en Salamanca para comer, con buena relación calidad-precio, y donde además puedas ver el fútbol, es tu lugar. Además, un menú del día muy acertado."}, {"n": "Isabel Maria", "s": 5, "d": "Hace 2 meses", "t": "Se está muy a gusto en la terraza, es muy buena zona para tomar algo. Toda la comida que pedimos muy rica, relación calidad-precio muy buena y ponen mucha cantidad. ¡Lo recomiendo 100x100!"}, {"n": "Cristina Dominguez", "s": 5, "d": "Hace 3 meses", "t": "Lugar bonito, original decorado. Probamos dos versiones de tiramisú. El de café: riquísimo, sabor intenso y crema sedosa. El de limón: una pasada, original y fresco. Absolutamente recomendable."}, {"n": "Alba Avedillo Nieto", "s": 5, "d": "Hace 3 meses", "t": "Una experiencia de 10. El ambiente del bar es muy agradable, la comida y las bebidas estupendas, pero lo mejor fue la atención: amable, atento y siempre con una sonrisa."}, {"n": "Mariangelesdomiberr Domiberr", "s": 5, "d": "Hace 3 meses", "t": "Paramos por casualidad al ver buen ambiente en la terraza. Tapeo muy bueno, excelente servicio y precio asequible. Repetiremos."}, {"n": "Avril Diaz", "s": 5, "d": "Hace 3 meses", "t": "Pedimos el menú lunch y estuvo súper delicioso. Es una buena cantidad y el precio estuvo excelente también."}, {"n": "Katherine Luque Ramos", "s": 5, "d": "Hace 3 meses", "t": "Todo excelente. Menú del día con entrada, plato principal y postre: comí paella de mariscos, salmón y panacota."}, {"n": "diego moreno", "s": 5, "d": "Hace 3 meses", "t": "Una hamburguesa espectacular a buen precio acompañada de un vino genial, 10/10."}];window.HOURS=[[], ["12:00-17:00", "19:00-00:00"], ["12:00-17:00", "19:00-00:00"], ["12:00-17:00", "19:00-00:00"], ["12:00-17:00", "19:00-00:00"], ["12:00-17:00", "19:00-00:00"], ["12:00-17:00", "19:00-00:00"]];</script>
+<script>
+(function(){
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+/* menu */
+const bg=$('.burger'),ln=$('.links');
+if(bg){bg.addEventListener('click',()=>{const o=ln.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+$$('.links a').forEach(a=>a.addEventListener('click',()=>{ln.classList.remove('open');bg.setAttribute('aria-expanded',false)}));
+document.addEventListener('click',e=>{if(!e.target.closest('.nav')){ln.classList.remove('open');bg.setAttribute('aria-expanded',false)}});}
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv-in').forEach(el=>io.observe(el));
+/* horario */
+const H=window.HOURS;
+function madrid(){const p=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type==t).value;const wd=['lun','mar','mié','jue','vie','sáb','dom'].indexOf(g('weekday').replace('.','').toLowerCase());return{d:wd<0?new Date().getDay()-1:wd,m:(+g('hour')%24)*60+(+g('minute'))}}
+function toM(s){const[h,m]=s.split(':').map(Number);return h*60+m}
+function isOpen(){if(!H)return null;const n=madrid();const d=(n.d+7)%7;for(const r of H[d]){let[a,b]=r.split('-').map(toM);if(b<=a)b+=1440;if(n.m>=a&&n.m<b)return r}const y=(d+6)%7;for(const r of H[y]){let[a,b]=r.split('-').map(toM);if(b<=a&&n.m<b)return r}return false}
+const st=$('#status');
+if(st&&H){const o=isOpen();st.className='status '+(o?'open':'closed');st.innerHTML='<i></i>'+(o?'Abierto ahora · hasta las '+o.split('-')[1]:'Cerrado ahora');
+const td=(madrid().d+7)%7;const tr=$$('.hours tr')[td];if(tr)tr.classList.add('today');}
+/* reseñas */
+const R=window.REVIEWS||[],tk=$('#rvTrack');
+if(tk){const cols=['#e11d48','#7c3aed','#0891b2','#ea580c','#16a34a','#2563eb','#ca8a04','#db2777'];
+const star='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3 7.4 14l-1.6 7z"/></svg>';
+const g=document.querySelector('.rv-head .g-logo').outerHTML;
+tk.innerHTML=R.map((r,i)=>`<article class="rv" data-k="${(r.k||'').toLowerCase()} ${r.t.toLowerCase()}" data-s="${r.s}"><div class="rv-top"><span class="av" style="background:${cols[i%cols.length]}">${r.n.trim()[0].toUpperCase()}</span><div><strong>${r.n}</strong><small>${r.d}</small></div>${g}</div><span class="stars">${star.repeat(r.s)}</span><p>${r.t}</p><button class="more" type="button">Leer más</button></article>`).join('');
+$$('.rv',tk).forEach(c=>{const p=$('p',c),b=$('.more',c);requestAnimationFrame(()=>{if(p.scrollHeight<=p.clientHeight+2)b.style.display='none'});b.onclick=()=>{c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Leer menos':'Leer más'}});
+const dots=$('#rvDots');
+function vis(){return $$('.rv:not(.hide)',tk)}
+function mkDots(){dots.innerHTML=vis().map(()=>'<i></i>').join('');upd()}
+function upd(){const v=vis();let idx=0,best=1e9;v.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-tk.scrollLeft-tk.offsetLeft);if(d<best){best=d;idx=i}});$$('i',dots).forEach((d,i)=>d.classList.toggle('on',i==idx))}
+tk.addEventListener('scroll',()=>requestAnimationFrame(upd));
+$('#rvPrev').onclick=()=>tk.scrollBy({left:-tk.clientWidth*.8,behavior:'smooth'});
+$('#rvNext').onclick=()=>tk.scrollBy({left:tk.clientWidth*.8,behavior:'smooth'});
+$$('.rv-chips .chip').forEach(ch=>ch.onclick=()=>{$$('.rv-chips .chip').forEach(x=>x.classList.remove('on'));ch.classList.add('on');const f=ch.dataset.f;$$('.rv',tk).forEach(c=>{let ok=true;if(f=='5')ok=c.dataset.s=='5';else if(f)ok=f.split('|').some(w=>c.dataset.k.includes(w));c.classList.toggle('hide',!ok)});tk.scrollTo({left:0});mkDots()});
+let down=false,sx=0,sl=0;tk.addEventListener('mousedown',e=>{down=true;sx=e.pageX;sl=tk.scrollLeft;tk.style.scrollSnapType='none'});window.addEventListener('mouseup',()=>{if(down){down=false;tk.style.scrollSnapType=''}});tk.addEventListener('mousemove',e=>{if(down){e.preventDefault();tk.scrollLeft=sl-(e.pageX-sx)}});
+let auto=setInterval(()=>{if(document.hidden)return;const max=tk.scrollWidth-tk.clientWidth;if(tk.scrollLeft>=max-5)tk.scrollTo({left:0,behavior:'smooth'});else tk.scrollBy({left:tk.querySelector('.rv').offsetWidth+18,behavior:'smooth'})},5500);
+['pointerdown','wheel','touchstart'].forEach(ev=>tk.addEventListener(ev,()=>clearInterval(auto),{passive:true}));
+mkDots();}
+/* galería */
+const gl=$$('.gal button'),lb=$('.lb');
+if(lb&&gl.length){let k=0;const im=$('img',lb);const show=i=>{k=(i+gl.length)%gl.length;im.src=gl[k].dataset.big;lb.classList.add('on')};
+gl.forEach((b,i)=>b.onclick=()=>show(i));$('.x',lb).onclick=()=>lb.classList.remove('on');$('.pv',lb).onclick=e=>{e.stopPropagation();show(k-1)};$('.nx',lb).onclick=e=>{e.stopPropagation();show(k+1)};
+lb.onclick=e=>{if(e.target==lb)lb.classList.remove('on')};document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key=='Escape')lb.classList.remove('on');if(e.key=='ArrowLeft')show(k-1);if(e.key=='ArrowRight')show(k+1)});
+let tx=0;lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(k+(d<0?1:-1))});}
+})();
+</script>
+<script>(function(){const w=['tapeo','menú','tiramisú','terraza','fútbol','caña'];let i=0;const r=document.getElementById('rot');setInterval(()=>{r.classList.add('out');setTimeout(()=>{i=(i+1)%w.length;r.textContent=w[i];r.classList.remove('out')},300)},2200);
+const p=document.getElementById('routeOn'),wk=document.getElementById('walker'),t=document.getElementById('walkT'),L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;
+function go(){const t0=performance.now(),T=3000;(function f(n){const k=Math.min(1,(n-t0)/T);p.style.strokeDashoffset=L*(1-k);const pt=p.getPointAtLength(L*k);wk.setAttribute('x',pt.x-11);wk.setAttribute('y',pt.y+8);t.textContent='⏱️ '+(k*2).toFixed(1).replace('.',',')+' min'+(k==1?' · ¡Ya has llegado! 🎉':'');if(k<1)requestAnimationFrame(f)})(t0)}
+document.getElementById('walkGo').onclick=go;new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){go();o.disconnect()}},{threshold:.5}).observe(document.querySelector('.walk-map'))})();</script>
+</body></html>
